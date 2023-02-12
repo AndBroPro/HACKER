@@ -30,7 +30,9 @@ class Node {
     }
   } 
  let hello = new linkedList()
- for(let i = 0; i<5; )
+ for(let i = 0; i<5; i++){
+   console.log()
+ }
  
  hello.add(5)
  hello.add(15)
