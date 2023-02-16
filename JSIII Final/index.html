@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+        <script src="LivingCreature.js"></script>
+        <script src="script.js"></script>   
+        <script src="grass.js"></script> 
+        <script src="robot.js"></script>
+        <script src="grassEater.js"></script>
+        <script src="grassEaterGirls.js"></script>
+        <script src="creatorRobot.js"></script>
+        <script src="water.js"></script>
+        <script src="powerful.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prog 3 Final</title>
+</head>
+<body>
+    
+    <div id="buttondiv">
+       <div>
+        <button class="button" id="buttonWinter">
+            Winter
+        </button>
+        <button class="button" id="buttonSummer">
+            Summer
+        </button>
+        <button class="button" id="buttonAutumn">
+            Autumn
+        </button>
+        <button class="button" id="buttonSpring">
+            Spring
+        </button>
+        <button class="button" id="buttonVirus">
+            Create Virus
+        </button>
+       </div>
+         <div id="informationdiv">
+            <ul>
+                <li><div id="vir" class="divli"></div><span>Վիրուս, որը ոչնչացնում է ռոբոտին։</span></li>
+                <li><div id="crRob" class="divli"></div><span>Ռոբոտներ է ստեղծում։</span></li>
+                <li><div id="rob" class="divli"></div><span>Ռոբոտներ, որոնք ուտում են միայն խոտակերներին։</span></li>
+                <li><div id="grEa" class="divli"></div><span>Խոտակեր։</span></li>
+                <li><div id="grEaGr" class="divli"></div><span>Խոտակեր էք։</span></li>
+                <li><div id="wat" class="divli"></div><span>Ջուր, ամեն կերպար բացի վիրուսից, նրան կպնելիս իր էներգիան վերականգնում է։</span></li>
+            </ul>
+        </div>
+    </div>
+   
+        <script>
+            document.querySelector('#buttonWinter').onclick = function(){
+                colorGrass = "white"
+                fast = 5
+                console.log(fast)
+            }
+            document.querySelector('#buttonSummer').onclick = function(){
+                colorGrass = "Green"
+                fast = 60
+                console.log(fast)
+            }
+            document.querySelector('#buttonAutumn').onclick = function(){
+                colorGrass = "#FF5900"
+                fast = 10
+                console.log(fast)
+            }
+            document.querySelector('#buttonSpring').onclick = function(){
+                colorGrass = "#52FF4D"
+                fast = 20
+                console.log(fast)
+            }
+            document.querySelector('#buttonVirus').onclick = function(){
+                // colorGrass = "#52FF4D"
+                // fast = 20
+                // console.log(fast)
+                VIRUS = 1
+                
+            }
+        </script>
+</body>
+</html>

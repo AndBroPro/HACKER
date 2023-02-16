@@ -1,0 +1,86 @@
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+#buttondiv{
+    margin-top: 50px;
+	float: right;
+}
+#buttonWinter{
+    background-color: #84AFFF;
+}
+#buttonSummer{
+    background-color: #34A107;
+}
+#buttonAutumn{
+    background-color: #FF2A00;
+}
+#buttonSpring{
+    background-color: #17FF00;
+}
+.button{
+    padding: 10px;
+    margin: 10px;
+    float: right;
+    font-size: 50px;
+    border-radius: 10px;
+}
+.button:hover{
+    animation: bounce 1s;
+}
+#buttonVirus{
+	float: right;
+	background-color: black;
+	color: white;
+}
+#informationdiv{
+	border: 1px solid black;
+	height: 1000px;
+	width: 2000px;
+	float: right;
+}
+ul{
+	list-style-type: none;
+	margin-left: 100px;
+	font-size: 50px;
+}
+li{
+	margin: 20px;
+	font-size: 60px;
+}
+.divli{
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+#vir{
+	background-color: black;
+}
+#crRob{
+	background-color: #D32600;
+}
+#rob{
+	background-color: red;
+}
+#grEa{
+	background-color: green;
+}
+#grEaGr{
+	background-color: blue;
+}
+#wat{
+	background-color: #04B6FE;
+}
