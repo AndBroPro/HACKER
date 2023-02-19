@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script> -->
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 4 JSIII</title>   
+</head>
+<body>
+
+    <script>
+        var socket = io()
+        var button = document.querySelector('#send')
+        
+        button.addEventListener('click',()=>{
+            var massage = document.querySelector('#massage')
+            if(massage.Value != ""){
+            socket.emit('send massage',massage.Value)
+        }
+        })
+        
+        </script>
+    <!-- <p class="MyClass" id="OnlyP">P1</p>
+    <p>P2</p>
+    <p>P3</p>
+    <h1 class="MyClass">H1</h1>
+    <div class="MyClass">DIV</div>
+    <button id="MyButton">Push me</button>
+    <script src="script.js"></script> -->
+    <div id="Chat">
+        <input type="text" id="massage">
+        <br>
+        <button id="send">Send</button>
+    </div>
+</body>
+</html>
