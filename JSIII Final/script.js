@@ -80,21 +80,22 @@ let VIRUS = 0
 function draw() {
     frameRate(fast);
     
-    
      
     
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
             if(VIRUS == 1){
-                if(i == 40 && j == 1){
-                    matrix[i][j] = 7
-                }
+                    
+                     matrix[0][39] = 7 
+                    //console.log(matrix)
             }
             if(matrix[i][j] === 7){
-                let vir = new Virus(j, i, 7);
+                let vir = new Virus(1, j, i);
                 virusArr.push(vir)
             }
+            break
         }
+        
     }
   
     // console.log(VIRUS)
@@ -122,7 +123,7 @@ function draw() {
             else if (matrix[y][x] == 6) {
                 fill("#04B6FE");
             }
-            else if (matrix[y][x] == 7) {
+            else if (matrix[y][x] == 7 && VIRUS == 1) {
                 fill("black");
             }
             rect(x * side, y * side, side, side);
