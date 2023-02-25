@@ -36,9 +36,10 @@ class Virus extends LivingCreature{
             }
     }
     move(){
-    // console.log(this.energy)
+    //console.log(this.energy)
+    //console.log("move")
          
-        let VirCells = this.chooseCell(random([0,1]))
+        let VirCells = this.chooseCell(1)
         let newCell = random(VirCells)
 
         if(newCell && this.energy > 0){

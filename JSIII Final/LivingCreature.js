@@ -6,6 +6,7 @@ class LivingCreature{
         this.index = index;
         this.directions = [];
         this.multiply = 0
+        this.gender = [];
     }
     getNewCoordinates() {
         this.directions = [

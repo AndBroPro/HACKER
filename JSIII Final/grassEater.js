@@ -25,6 +25,22 @@ class GrassEater extends LivingCreature{
             }
         }
     }
+    mul(){
+                 var emptyCells = this.chooseCell(random([2]));
+                 var newCell = random(emptyCells);
+                
+ 
+                 if(newCell && this.multiply >= 8){
+                     
+                     var newX = newCell[0];
+                     var newY = newCell[1];
+                     matrix[newY][newX] = random([2]);
+                     var newGrassEater = new GrassEater(newX, newY,2)
+                     grassEatr.push(newGrassEater);
+                     this.multiply = 0;
+                 }
+                 this.energy = 10
+     }
     move(){
          
         let grassCells = this.chooseCell(random([0,1]))
@@ -39,7 +55,7 @@ class GrassEater extends LivingCreature{
             this.x = NEWX
             this.y = NEWY
              this.energy--
-            // console.log("move = " + this.energy)
+            
         }else{
             this.dead()
         }

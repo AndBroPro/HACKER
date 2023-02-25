@@ -2,7 +2,6 @@ let matrix = [];
 let grassArr = []
 let grassEatr = []
 let robotArr = []
-let grassEatrGirlsArr =[]
 let creatorRobotArr = []
 let waterArr = []
 let virusArr = []
@@ -22,18 +21,6 @@ function setup() {
             }
             if(i == 2 && j == 2){
                 matrix[i][j] = 3
-            }
-            if(i == 25 && j == 35){
-                matrix[i][j] = 4
-            }
-            if(i == 25 && j == 30){
-                matrix[i][j] = 4
-            }
-            if(i == 40 && j == 40){
-                matrix[i][j] = 4
-            }
-            if(i == 25 && j == 25){
-                matrix[i][j] = 4
             }
             if(i == 1 && j == 1){
                 matrix[i][j] = 5
@@ -59,10 +46,6 @@ function setup() {
                 let rob = new Robot(j, i, 3);
                 robotArr.push(rob); 
             }
-            else if (matrix[i][j] === 4) {
-                let grErGR = new GrassEaterGirl(j, i, 4);
-                grassEatrGirlsArr.push(grErGR); 
-            }
             else if (matrix[i][j] === 5) {
                 let CrRob = new CreatorRobot(j, i, 5);
                 creatorRobotArr.push(CrRob); 
@@ -87,17 +70,17 @@ function draw() {
             if(VIRUS == 1){
                     
                      matrix[0][39] = 7 
-                    //console.log(matrix)
+                    //console.log(VIRUS)
             }
             if(matrix[i][j] === 7){
                 let vir = new Virus(1, j, i);
                 virusArr.push(vir)
             }
-            break
+             
         }
         
-    }
-  
+        break}
+    
     // console.log(VIRUS)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -113,9 +96,6 @@ function draw() {
             }
             else if (matrix[y][x] == 3) {
                 fill("red");
-            }
-            else if (matrix[y][x] == 4) {
-                fill("blue");
             }
             else if (matrix[y][x] == 5) {
                 fill("#D32600");
@@ -138,10 +118,6 @@ function draw() {
    }
    for(var i in robotArr){
     robotArr[i].eat();
-  }
-  for(var i in grassEatrGirlsArr){
-    grassEatrGirlsArr[i].eat();
-    grassEatrGirlsArr[i].ReturnEnargy();
   }
   for(var i in creatorRobotArr){
     if(frameCount % 15 == 0){
