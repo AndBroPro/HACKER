@@ -40,7 +40,7 @@
 .button:hover{
     animation: bounce 1s;
 }
-#buttonVirus{
+#buttonRandColor{
 	float: right;
 	background-color: black;
 	color: white;
@@ -66,7 +66,7 @@ li{
 	height: 100px;
 	display: inline-block;
 }
-#vir{
+#randColor{
 	background-color: black;
 }
 #crRob{

@@ -4,11 +4,14 @@ let grassEatr = []
 let robotArr = []
 let creatorRobotArr = []
 let waterArr = []
-let virusArr = []
+let bombArr = []
 
 let colorGrass = "green"
 let fast = 60
 
+var colorGrassEater = "yellow"
+var colorRobot = "red"
+var colorCraterRobot = "D32600"
 
 var side = 40;
 function setup() {
@@ -17,6 +20,9 @@ function setup() {
         for(let j = 0; j < 40; j++){
             matrix[i][j] = random([0, 1])
             if(i == 39 && j == 39){
+                matrix[i][j] = 2
+            }
+            if(i == 29 && j == 29){
                 matrix[i][j] = 2
             }
             if(i == 2 && j == 2){
@@ -58,30 +64,10 @@ function setup() {
         }
     }
 }
-let VIRUS = 0
+let BOMB = 0
 
 function draw() {
     frameRate(fast);
-    
-     
-    
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            if(VIRUS == 1){
-                    
-                     matrix[0][39] = 7 
-                    //console.log(VIRUS)
-            }
-            if(matrix[i][j] === 7){
-                let vir = new Virus(1, j, i);
-                virusArr.push(vir)
-            }
-             
-        }
-        
-        break}
-    
-    // console.log(VIRUS)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -92,19 +78,16 @@ function draw() {
                 fill("#acacac");
             }
             else if (matrix[y][x] == 2) {
-                fill("yellow");
+                fill(colorGrassEater);
             }
             else if (matrix[y][x] == 3) {
-                fill("red");
+                fill(colorRobot);
             }
             else if (matrix[y][x] == 5) {
-                fill("#D32600");
+                fill(colorCraterRobot);
             }
             else if (matrix[y][x] == 6) {
                 fill("#04B6FE");
-            }
-            else if (matrix[y][x] == 7 && VIRUS == 1) {
-                fill("black");
             }
             rect(x * side, y * side, side, side);
         }
@@ -123,8 +106,5 @@ function draw() {
     if(frameCount % 15 == 0){
         creatorRobotArr[i].mul();
     }
-  }
-  for(var i in virusArr){
-    virusArr[i].eat()
   }
 }

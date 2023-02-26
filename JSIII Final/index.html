@@ -10,7 +10,6 @@
         <script src="grassEater.js"></script>
         <script src="creatorRobot.js"></script>
         <script src="water.js"></script>
-        <script src="virus.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -32,13 +31,13 @@
         <button class="button" id="buttonSpring">
             Spring
         </button>
-        <button class="button" id="buttonVirus">
+        <button class="button" id="buttonRandColor">
             Create Virus
         </button>
        </div>
          <div id="informationdiv">
             <ul>
-                <li><div id="vir" class="divli"></div><span>Վիրուս, որը ոչնչացնում է ռոբոտին։</span></li>
+                <li><div id="randColor" class="divli"></div><span>Վիրուս, որը ոչնչացնում է ռոբոտին։</span></li>
                 <li><div id="crRob" class="divli"></div><span>Ռոբոտներ է ստեղծում։</span></li>
                 <li><div id="rob" class="divli"></div><span>Ռոբոտներ, որոնք ուտում են միայն խոտակերներին։</span></li>
                 <li><div id="grEa" class="divli"></div><span>Խոտակեր։</span></li>
@@ -69,8 +68,19 @@
                 fast = 20
                 console.log(fast)
             }
-            document.querySelector('#buttonVirus').onclick = function(){
-                VIRUS = 1  
+            document.querySelector('#buttonRandColor').onclick = function(){
+                function generateRandomColor(){
+                let maxVal = 0xFFFFFF; // 16777215
+                let randomNumber = Math.random() * maxVal; 
+                randomNumber = Math.floor(randomNumber);
+                randomNumber = randomNumber.toString(16);
+                let randColor = randomNumber.padStart(6, 0);   
+                return `#${randColor.toUpperCase()}`
+                }
+                colorGrassEater = generateRandomColor()
+                colorRobot = generateRandomColor()
+                colorCraterRobot = generateRandomColor()
+                // console.log(colorGrassEater)
             }
         </script>
 </body>

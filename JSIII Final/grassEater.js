@@ -25,6 +25,7 @@ class GrassEater extends LivingCreature{
             }
         }
     }
+    
     mul(){
                  var emptyCells = this.chooseCell(random([2]));
                  var newCell = random(emptyCells);
