@@ -11,7 +11,7 @@ let fast = 60
 
 var colorGrassEater = "yellow"
 var colorRobot = "red"
-var colorCraterRobot = "D32600"
+var colorCraterRobot = "#D32600"
 
 var side = 40;
 function setup() {
