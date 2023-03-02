@@ -63,11 +63,21 @@ function setup() {
             
         }
     }
+    // for(var i in grassEatr){
+    //     for(var h = 1000; h <= 30000; h + 1000)
+    //     setTimeout( grassEatr[i].mul(),1000)
+    //     break
+    // }
+    // setTimeout(()=>{
+    //     console.log("axper jan")
+    // }, )
+   
 }
-let BOMB = 0
 
+let BOMB = 0
 function draw() {
     frameRate(fast);
+    console.log(frameRate)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -98,6 +108,11 @@ function draw() {
     for(var i in grassEatr){
      grassEatr[i].eat();
      grassEatr[i].ReturnEnargy()
+     if(frameRate <= 550){
+        grassEatr[i].mul();
+     }
+    //  console.log(frameCount)
+    
    }
    for(var i in robotArr){
     robotArr[i].eat();

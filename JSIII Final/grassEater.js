@@ -1,4 +1,3 @@
-
 class GrassEater extends LivingCreature{
     eat() {
         this.multiply++
@@ -27,7 +26,7 @@ class GrassEater extends LivingCreature{
     }
     
     mul(){
-                 var emptyCells = this.chooseCell(random([2]));
+                 var emptyCells = this.chooseCell(random(1));
                  var newCell = random(emptyCells);
                 
  
@@ -55,7 +54,7 @@ class GrassEater extends LivingCreature{
             matrix[this.y][this.x] = 0
             this.x = NEWX
             this.y = NEWY
-             this.energy--
+            //  this.energy--
             
         }else{
             this.dead()
