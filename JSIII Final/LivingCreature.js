@@ -6,13 +6,7 @@ class LivingCreature{
         this.index = index;
         this.directions = [];
         this.multiply = 0
-        // this.gender = this.GenerateGender();
-        // this.color = getthecolor(this.gender)
     }
-    // GenerateGender(){
-
-    //     return Math.floor(Math.random() * 1)
-    // }
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],

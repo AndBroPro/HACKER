@@ -66,9 +66,6 @@ li{
 	height: 100px;
 	display: inline-block;
 }
-#randColor{
-	background-color: pink;
-}
 #crRob{
 	background-color: #D32600;
 }
@@ -76,7 +73,7 @@ li{
 	background-color: red;
 }
 #grEa{
-	background-color: green;
+	background-color: yellow;
 }
 #grEaGr{
 	background-color: blue;

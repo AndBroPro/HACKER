@@ -2,13 +2,13 @@ let matrix = [];
 let grassArr = []
 let grassEatr = []
 let robotArr = []
+let grassEatrGirlsArr =[]
 let creatorRobotArr = []
 let waterArr = []
-let bombArr = []
+let virusArr = []
 
 let colorGrass = "green"
 let fast = 60
-
 var colorGrassEater = "yellow"
 var colorRobot = "red"
 var colorCraterRobot = "#D32600"
@@ -22,7 +22,7 @@ function setup() {
             if(i == 39 && j == 39){
                 matrix[i][j] = 2
             }
-            if(i == 29 && j == 29){
+            if(i == 35 && j == 35){
                 matrix[i][j] = 2
             }
             if(i == 2 && j == 2){
@@ -63,21 +63,34 @@ function setup() {
             
         }
     }
-    // for(var i in grassEatr){
-    //     for(var h = 1000; h <= 30000; h + 1000)
-    //     setTimeout( grassEatr[i].mul(),1000)
-    //     break
-    // }
-    // setTimeout(()=>{
-    //     console.log("axper jan")
-    // }, )
-   
 }
+let VIRUS = 0
 
-let BOMB = 0
 function draw() {
     frameRate(fast);
-    console.log(frameRate)
+    
+    // var timer = setInterval(function() {
+    //     if (t >= 0) {
+    //         let secs = Math.floor((t % (1000 * 60)) / 1000);
+    //     }
+    // }, 1000);
+     
+    
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if(VIRUS == 1){
+                if(i == 40 && j == 1){
+                    matrix[i][j] = 7
+                }
+            }
+            if(matrix[i][j] === 7){
+                let vir = new Virus(j, i, 7);
+                virusArr.push(vir)
+            }
+        }
+    }
+  
+    // console.log(VIRUS)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -106,20 +119,22 @@ function draw() {
       grassArr[i].mul();
     }
     for(var i in grassEatr){
-     grassEatr[i].eat();
+     grassEatr[i].eat();    
      grassEatr[i].ReturnEnargy()
-     if(frameRate <= 550){
-        grassEatr[i].mul();
-     }
-    //  console.log(frameCount)
-    
    }
    for(var i in robotArr){
     robotArr[i].eat();
   }
+//   for(var i in grassEatrGirlsArr){
+//     grassEatrGirlsArr[i].eat();
+//     grassEatrGirlsArr[i].ReturnEnargy();
+//   }
   for(var i in creatorRobotArr){
     if(frameCount % 15 == 0){
         creatorRobotArr[i].mul();
     }
+  }
+  for(var i in virusArr){
+    virusArr[i].eat()
   }
 }

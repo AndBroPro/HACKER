@@ -1,4 +1,4 @@
-class GrassEater extends LivingCreature{
+class GrassEaterGirl extends LivingCreature{
     eat() {
         this.multiply++
         
@@ -9,7 +9,7 @@ class GrassEater extends LivingCreature{
           
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 2;
+            matrix[newY][newX] = 4;
             matrix[this.y][this.x] = 0;
             this.x = newX
             this.y = newY
@@ -30,7 +30,7 @@ class GrassEater extends LivingCreature{
         }
     }
     move(){
-         
+        
         let grassCells = this.chooseCell(random([0,1]))
         let newCell = random(grassCells)
 
@@ -38,7 +38,7 @@ class GrassEater extends LivingCreature{
            
             let NEWX = newCell[0]
             let NEWY = newCell[1]
-            matrix[NEWY][NEWX] = 2
+            matrix[NEWY][NEWX] = 4
             matrix[this.y][this.x] = 0
             this.x = NEWX
             this.y = NEWY
@@ -49,35 +49,50 @@ class GrassEater extends LivingCreature{
         }
         
     }
-    mul(){
-                 var emptyCells = this.chooseCell(2);
-                 var newCell = random(emptyCells);
- 
-                 if(newCell && this.multiply >= 8){
-                     
-                     var newX = newCell[0];
-                     var newY = newCell[1];
-                     matrix[newY][newX] = 2;
-                     var newGrassEater = new GrassEater(newX, newY,2)
-                     grassEatr.push(newGrassEater);
- 
-                     this.multiply = 0;
-                 }
-                 this.energy = 10
-     }
     dead(){
         if(this.energy <= 0){
             matrix[this.y][this.x] = 0
             
             for(let i in grassEatr){
                 
-                if(this.x == grassEatr[i].x && this.y == grassEatr[i].y){
+                if(this.x == grassEatrGirlsArr[i].x && this.y == grassEatrGirlsArr[i].y){
                 
-                    grassEatr.splice(i, 1);
+                    grassEatrGirlsArr.splice(i, 1);
                     break;
                 }
             }
         }
+    }
+   mul(){
+    
+    
+       // console.log('saferwerwerwerwerweds')
+            //this.multiply++;
+                var emptyCells = this.chooseCell(random([2,4]));
+                var newCell = random(emptyCells);
+               // console.log(this.multiply)
+
+                if(newCell && this.multiply >= 8){
+                    
+                    var newX = newCell[0];
+                    var newY = newCell[1];
+                    // gender = random([2,4])
+                    matrix[newY][newX] = random([2,4]);
+                    var newGrassEater = new GrassEater(newX, newY,2)
+                    grassEatr.push(newGrassEater);
+
+                    // if(gender == 2){
+                       
+                    //     var newGrassEater = new GrassEater(newX, newY,2)
+                    //     grassEatr.push(newGrassEater);
+                    // }else if(gender == 4){
+                    //     matrix[newY][newX] = gender;
+                    //     var newGrassEaterGirl = new GrassEaterGirl(newX, newY,4)
+                    //     grassEatrGirlsArr.push(newGrassEaterGirl);
+                    // }
+                    this.multiply = 0;
+                }
+                this.energy = 10
     }
     ReturnEnargy(){
         let WaterCell = this.chooseCell(6)
