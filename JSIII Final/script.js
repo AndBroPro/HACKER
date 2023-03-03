@@ -63,34 +63,15 @@ function setup() {
             
         }
     }
+   
 }
-let VIRUS = 0
-
+var time = 0
+function TIME(){
+    time++
+}
 function draw() {
     frameRate(fast);
-    
-    // var timer = setInterval(function() {
-    //     if (t >= 0) {
-    //         let secs = Math.floor((t % (1000 * 60)) / 1000);
-    //     }
-    // }, 1000);
-     
-    
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            if(VIRUS == 1){
-                if(i == 40 && j == 1){
-                    matrix[i][j] = 7
-                }
-            }
-            if(matrix[i][j] === 7){
-                let vir = new Virus(j, i, 7);
-                virusArr.push(vir)
-            }
-        }
-    }
-  
-    // console.log(VIRUS)
+    setInterval(TIME,60000)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -119,8 +100,13 @@ function draw() {
       grassArr[i].mul();
     }
     for(var i in grassEatr){
-     grassEatr[i].eat();    
-     grassEatr[i].ReturnEnargy()
+        if(time <= 30){
+            console.log("time = " + time)
+            grassEatr[i].eat();    
+        }
+        grassEatr[i].ReturnEnargy()
+        grassEatr[i].move()
+     
    }
    for(var i in robotArr){
     robotArr[i].eat();
