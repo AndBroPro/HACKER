@@ -71,7 +71,7 @@ function TIME(){
 }
 function draw() {
     frameRate(fast);
-    setInterval(TIME,60000)
+    let TimeID = setInterval(TIME,60000)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -100,9 +100,10 @@ function draw() {
       grassArr[i].mul();
     }
     for(var i in grassEatr){
-        if(time <= 30){
-            console.log("time = " + time)
+        if(time <= 1){
+            // console.log("time = " + time)
             grassEatr[i].eat();    
+            clearInterval(TimeID)
         }
         grassEatr[i].ReturnEnargy()
         grassEatr[i].move()
@@ -111,10 +112,6 @@ function draw() {
    for(var i in robotArr){
     robotArr[i].eat();
   }
-//   for(var i in grassEatrGirlsArr){
-//     grassEatrGirlsArr[i].eat();
-//     grassEatrGirlsArr[i].ReturnEnargy();
-//   }
   for(var i in creatorRobotArr){
     if(frameCount % 15 == 0){
         creatorRobotArr[i].mul();
