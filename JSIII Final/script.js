@@ -103,6 +103,8 @@ function draw() {
         if(time <= 1){
             // console.log("time = " + time)
             grassEatr[i].eat();    
+           
+        }else{
             clearInterval(TimeID)
         }
         grassEatr[i].ReturnEnargy()
