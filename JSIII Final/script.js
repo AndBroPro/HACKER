@@ -2,11 +2,9 @@ let matrix = [];
 let grassArr = []
 let grassEatr = []
 let robotArr = []
-let grassEatrGirlsArr =[]
 let creatorRobotArr = []
 let waterArr = []
-let virusArr = []
-
+let socket = io()
 let colorGrass = "green"
 let fast = 60
 var colorGrassEater = "yellow"
@@ -71,7 +69,18 @@ function TIME(){
 }
 function draw() {
     frameRate(fast);
-    let TimeID = setInterval(TIME,60000)
+    if(frameCount % 60 == 0){
+        let DATA = {
+            "grassArr" : grassArr.length,
+            "grassEatr" : grassEatr.length,
+            "robotArr" : robotArr.length,
+        }
+        socket.emit("Send data",DATA)
+    }
+   
+    
+
+    let TimeID = setInterval(TIME,40000)
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -119,7 +128,5 @@ function draw() {
         creatorRobotArr[i].mul();
     }
   }
-  for(var i in virusArr){
-    virusArr[i].eat()
-  }
+
 }

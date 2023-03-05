@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
         <script src="LivingCreature.js"></script>
         <script src="script.js"></script>   
@@ -40,7 +41,6 @@
                 <li><div id="crRob" class="divli"></div><span>Ռոբոտներ է ստեղծում։</span></li>
                 <li><div id="rob" class="divli"></div><span>Ռոբոտներ, որոնք ուտում են միայն խոտակերներին։</span></li>
                 <li><div id="grEa" class="divli"></div><span>Խոտակեր։</span></li>
-                <li><div id="grEaGr" class="divli"></div><span>Խոտակեր էք։</span></li>
                 <li><div id="wat" class="divli"></div><span>Ջուր, ամեն կերպար նրան կպնելիս իր էներգիան վերականգնում է։</span></li>
             </ul>
         </div>
@@ -88,6 +88,7 @@
                 blockgrassEa.style.backgroundColor = colorGrassEater
             }
             
+
         </script>
 </body>
 </html

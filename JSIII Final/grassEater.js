@@ -14,7 +14,6 @@ class GrassEater extends LivingCreature{
             this.x = newX
             this.y = newY
               this.energy += 2
-              console.log(this.energy) 
              // console.log("eat = " + this.energy)
             for (var i in grassArr) {
                 if (newX == grassArr[i].x && newY == grassArr[i].y) {
